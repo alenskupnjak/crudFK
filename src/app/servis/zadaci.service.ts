@@ -14,4 +14,14 @@ export class ZadaciService {
     zadatakKreiran: new FormControl ('', Validators.required),
     vrijeme: new FormControl(''),
   });
+
+  inicijaliziraj() {
+    this.polja.setValue({
+      $id: null,
+      imeZadatka: '',
+      opisZadatka: '',
+      zadatakKreiran: '',
+      vrijeme: ''
+    });
+  }
 }

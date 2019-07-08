@@ -43,3 +43,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 006- definirani button unos i obriši
 
 007- unešeni validatorsi za polja
+
+008- forma zadatka gotova

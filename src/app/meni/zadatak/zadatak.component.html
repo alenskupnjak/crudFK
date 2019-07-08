@@ -23,11 +23,11 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
                <div>
-                 <input formControlName="vrijeme" [(ngModel)]="vrijemeUnosa" placeholder="Vrijeme">
+                 <input formControlName="vrijeme" placeholder="Vrijeme">
                </div>
                <div class="button-zadatak">
                  <button mat-raised-button color="primary" [disabled]="zadatakServis.polja.invalid">Unesi vrijednost</button>
-                 <button mat-raised-button color="warn">Obriši polja</button>
+                 <button mat-raised-button color="warn" (click)="ocistiPolja()">Obriši polja</button>
                </div>
         </div>
       </mat-grid-tile>

@@ -25,6 +25,12 @@ export class ZadatakComponent implements OnInit {
     let minute = date.getMinutes();
     let sekunde = date.getSeconds();
     this.vrijemeUnosa = sati + 'h-' + minute + 'min-' + sekunde + 'sec';
+    this.zadatakServis.polja.get('vrijeme').setValue(this.vrijemeUnosa);
+  }
+
+  ocistiPolja() {
+    this.zadatakServis.polja.reset();
+    this.zadatakServis.inicijaliziraj();
   }
 
 }
