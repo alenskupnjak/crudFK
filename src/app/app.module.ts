@@ -7,8 +7,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 // importirano nakon javljanja greške u consoli
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// ovim omogucuje zapis u bazu samo datuma
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +34,7 @@ import { environment } from 'src/environments/environment';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [ZadaciService],
+  providers: [ZadaciService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

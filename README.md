@@ -49,3 +49,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 009- npm install firebase @angular/fire --save
 
 010- spojen sa Firebase, kreirao prvi zapis
+
+011- omogucio zapis Datuma u bazu, (servis:DatePipe)

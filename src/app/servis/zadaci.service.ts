@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList} from '@angular/fire/database';
+import { DatePipe } from '@angular/common';
 
 @Injectable({providedIn: 'root'})
 
 export class ZadaciService {
 
-  constructor( private firebase: AngularFireDatabase) { }
+  constructor(
+    private firebase: AngularFireDatabase,
+    private datePipe: DatePipe
+                 ) { }
 
   listaZadataka: AngularFireList<any>;
 
@@ -38,7 +42,7 @@ export class ZadaciService {
     this.listaZadataka.push({
       imeZadatka: zadatak.imeZadatka,
       opisZadatka: zadatak.opisZadatka,
-      zadatakKreiran: zadatak.zadatakKreiran,
+      zadatakKreiran: zadatak.zadatakKreiran == '' ? '' : this.datePipe.transform(zadatak.zadatakKreiran, 'yyyy-MM-dd'),
       vrijeme: zadatak.vrijeme
     });
   }
