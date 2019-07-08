@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ZadaciService } from 'src/app/servis/zadaci.service';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-lista-zadataka',
@@ -13,6 +13,7 @@ export class ListaZadatakaComponent implements OnInit {
 
   listaZadataka: MatTableDataSource<any>;
   ispisaneKolone: string[] = ['imeZadatka', 'opisZadatka', 'zadatakKreiran', 'vrijeme', 'akcija'];
+  @ViewChild(MatSort) sort: MatSort;
 
   ucitano = true;
 
@@ -26,7 +27,7 @@ export class ListaZadatakaComponent implements OnInit {
           };
         });
         this.listaZadataka = new MatTableDataSource(podaci);
-        console.log(this.listaZadataka);
+        this.listaZadataka.sort = this.sort;
         this.ucitano = false;
       });
   }

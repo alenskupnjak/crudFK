@@ -61,3 +61,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 015- ubacene ikone za delete i edit
 
 016- ubacen spinner
+
+017- ugradeno sortiranje
