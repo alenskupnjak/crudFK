@@ -43,7 +43,6 @@ export class ZadatakComponent implements OnInit {
   }
 
   snimi() {
-    console.log(this.zadatakServis.polja.valid);
     console.log(this.zadatakServis.polja.value);
 
     if (this.zadatakServis.polja.valid) {

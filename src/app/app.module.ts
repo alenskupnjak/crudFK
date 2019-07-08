@@ -18,12 +18,14 @@ import { MeniComponent } from './meni/meni.component';
 import { ZadatakComponent } from './meni/zadatak/zadatak.component';
 import { ZadaciService } from './servis/zadaci.service';
 import { environment } from 'src/environments/environment';
+import { ListaZadatakaComponent } from './meni/lista-zadataka/lista-zadataka.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeniComponent,
-    ZadatakComponent
+    ZadatakComponent,
+    ListaZadatakaComponent
   ],
   imports: [
     BrowserModule,

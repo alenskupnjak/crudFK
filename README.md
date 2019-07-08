@@ -55,3 +55,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 012- ugraden snackbar
 
 013- ureden snackbar, gasi se nakon 2 sekunde
+
+014- baza spojena na tabelu
