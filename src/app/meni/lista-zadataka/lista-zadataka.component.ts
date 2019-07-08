@@ -12,7 +12,7 @@ export class ListaZadatakaComponent implements OnInit {
   constructor(private servis: ZadaciService) { }
 
   listaZadataka: MatTableDataSource<any>;
-  ispisaneKolone: string[] = ['imeZadatka', 'opisZadatka', 'zadatakKreiran', 'vrijeme'];
+  ispisaneKolone: string[] = ['imeZadatka', 'opisZadatka', 'zadatakKreiran', 'vrijeme', 'akcija'];
 
   ngOnInit() {
     this.servis.dohvatiSveZadatke().subscribe(

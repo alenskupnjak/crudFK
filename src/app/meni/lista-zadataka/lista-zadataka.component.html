@@ -9,13 +9,24 @@
       <mat-cell *matCellDef="let element">{{element.opisZadatka}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="zadatakKreiran">
-      <mat-header-cell *matHeaderCellDef>Opis zadatka</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Datum kreiranja</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.zadatakKreiran}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="vrijeme">
-      <mat-header-cell *matHeaderCellDef>Opis zadatka</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Vrijeme kreiranja</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.vrijeme}}</mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="akcija">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button color="warn"><mat-icon>delete_forever</mat-icon></button>
+
+      </mat-cell>
+    </ng-container>
+
+
 
     <!-- ključni zapis za mat- datatablu , postavlja header za tablicu -->
     <mat-header-row *matHeaderRowDef="ispisaneKolone"></mat-header-row>
