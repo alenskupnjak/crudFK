@@ -50,9 +50,8 @@ export class ZadatakComponent implements OnInit {
       this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
       this.zadatakServis.polja.reset();
       this.zadatakServis.inicijaliziraj();
-      this.obavijest.uspjesno('Zadatak snimljen!');
+      this.obavijest.uspjesno('Zadatak snimljen u bazu!');
     }
-
   }
 
 }
