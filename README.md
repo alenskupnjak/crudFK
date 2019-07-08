@@ -28,4 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 00- inicijalno, definiran GIT, novi projekt, Angular CLI: 7.3.9
+
 001-  instalacija Ang Materijala, generiranje komponenti (zadatak, meni) i početnog servisa zadaci
+
+002-  pokretanje meni komponente, generiranje material modula
