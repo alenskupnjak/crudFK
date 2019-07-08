@@ -41,3 +41,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    Ne piše u uputama no MatDatepickerModule i MatNativeDateModule moraju ici zajedno
 
 006- definirani button unos i obriši
+
+007- unešeni validatorsi za polja
