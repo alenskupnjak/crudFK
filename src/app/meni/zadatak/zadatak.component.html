@@ -3,15 +3,18 @@
       <mat-grid-tile>
         <div class="zadatakForma">
           <input type="hidden" formControlName="$id">
+
           <mat-form-field>
             <input formControlName="imeZadatka" matInput placeholder="Naziv Zadatka">
             <mat-error>Obavezno polje</mat-error>
           </mat-form-field>
+
           <mat-form-field>
             <input formControlName="opisZadatka" matInput placeholder="Opis Zadatka">
             <mat-error *ngIf="zadatakServis.polja.controls['opisZadatka'].errors?.required">Obavezno polje</mat-error>
             <mat-error *ngIf="zadatakServis.polja.controls['opisZadatka'].errors?.minlength">Minimalno 10 znakova</mat-error>
           </mat-form-field>
+
           <mat-form-field>
             <input
             formControlName="zadatakKreiran"
@@ -22,13 +25,16 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+
                <div>
                  <input formControlName="vrijeme" placeholder="Vrijeme">
                </div>
+
                <div class="button-zadatak">
                  <button mat-raised-button color="primary" [disabled]="zadatakServis.polja.invalid">Unesi vrijednost</button>
                  <button mat-raised-button color="warn" (click)="ocistiPolja()">Obriši polja</button>
                </div>
+               
         </div>
       </mat-grid-tile>
   </mat-grid-list>

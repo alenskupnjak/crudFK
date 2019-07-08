@@ -45,3 +45,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 007- unešeni validatorsi za polja
 
 008- forma zadatka gotova
+
+009- npm install firebase @angular/fire --save
