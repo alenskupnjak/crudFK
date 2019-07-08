@@ -1,4 +1,4 @@
-<form [formGroup]='zadatakServis.polja' class="formaZadatak">
+<form [formGroup]='zadatakServis.polja' class="formaZadatak" (submit)="snimi()">
   <mat-grid-list cols="1" rowHeight="400px">
       <mat-grid-tile>
         <div class="zadatakForma">
@@ -31,10 +31,10 @@
                </div>
 
                <div class="button-zadatak">
-                 <button mat-raised-button color="primary" [disabled]="zadatakServis.polja.invalid">Unesi vrijednost</button>
+                 <button mat-raised-button color="primary" type="submit" [disabled]="zadatakServis.polja.invalid">Snimi vrijednost</button>
                  <button mat-raised-button color="warn" (click)="ocistiPolja()">Obriši polja</button>
                </div>
-               
+
         </div>
       </mat-grid-tile>
   </mat-grid-list>

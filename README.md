@@ -47,3 +47,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 008- forma zadatka gotova
 
 009- npm install firebase @angular/fire --save
+
+010- spojen sa Firebase, kreirao prvi zapis

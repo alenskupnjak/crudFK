@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 // importirano nakon javljanja greške u consoli
@@ -13,6 +15,7 @@ import { AppComponent } from './app.component';
 import { MeniComponent } from './meni/meni.component';
 import { ZadatakComponent } from './meni/zadatak/zadatak.component';
 import { ZadaciService } from './servis/zadaci.service';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { ZadaciService } from './servis/zadaci.service';
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [ZadaciService],
   bootstrap: [AppComponent]

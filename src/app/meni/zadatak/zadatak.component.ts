@@ -16,7 +16,12 @@ export class ZadatakComponent implements OnInit {
   date: Date;
 
   ngOnInit() {
+    this.zadatakServis.dohvatiSveZadatke();
   }
+
+
+
+
 
 
   onDataChange(newdate) {
@@ -31,6 +36,18 @@ export class ZadatakComponent implements OnInit {
   ocistiPolja() {
     this.zadatakServis.polja.reset();
     this.zadatakServis.inicijaliziraj();
+  }
+
+  snimi() {
+    console.log(this.zadatakServis.polja.valid);
+    console.log(this.zadatakServis.polja.value);
+
+    if (this.zadatakServis.polja.valid) {
+      this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
+      this.zadatakServis.polja.reset();
+      this.zadatakServis.inicijaliziraj();
+    }
+
   }
 
 }
