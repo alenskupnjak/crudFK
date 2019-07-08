@@ -14,10 +14,14 @@ form.formaZadatak {
   margin: 0px 20px;
 }
 
-.zadatakForma{
-  width: 80%;
+.zadatakForma {
+  width: 100%;
   padding: 10%;
 }
+
+.zadatakForma > * {
+  width: 100%;
+  }
 
 
 
