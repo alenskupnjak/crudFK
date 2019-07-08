@@ -32,3 +32,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 001-  instalacija Ang Materijala, generiranje komponenti (zadatak, meni) i početnog servisa zadaci
 
 002-  pokretanje meni komponente, generiranje material modula
+
+003-  Definiran dio forme zadatka, definirani polje zadataka, pojava prva dva unosa

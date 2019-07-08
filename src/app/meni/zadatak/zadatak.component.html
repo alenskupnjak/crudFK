@@ -1,3 +1,24 @@
-<p>
-  zadatak works!
-</p>
+<form [formGroup]='zadatakServis.polja' class="formaZadatak">
+
+  <mat-grid-list cols="2" rowHeight="500px">
+      <mat-grid-tile>
+        <div class="zadatakForma">
+          <input type="hidden" formControlName="$id">
+          <mat-form-field>
+            <input formControlName="imeZadatka" matInput placeholder="Naziv Zadatka">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="opisZadatka" matInput placeholder="Opis Zadatka">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+
+
+
+
+      </mat-grid-tile>
+  </mat-grid-list>
+
+</form>
