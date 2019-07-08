@@ -36,3 +36,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 003-  Definiran dio forme zadatka, definirani polje zadataka, pojava prva dva unosa
 
 004- definirana forma zadatka
+
+005- definirana forma za datum i vrijeme
+   Ne piše u uputama no MatDatepickerModule i MatNativeDateModule moraju ici zajedno

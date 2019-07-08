@@ -9,13 +9,17 @@ import * as Material from '@angular/material';
     Material.MatToolbarModule,
     Material.MatGridListModule,
     Material.MatInputModule,
-    Material.MatFormFieldModule
+    Material.MatFormFieldModule,
+    Material.MatDatepickerModule,
+    Material.MatNativeDateModule
   ],
   exports: [
     Material.MatToolbarModule,
     Material.MatGridListModule,
     Material.MatInputModule,
-    Material.MatFormFieldModule
+    Material.MatFormFieldModule,
+    Material.MatDatepickerModule,
+    Material.MatNativeDateModule
   ]
 })
 export class MaterialModule { }

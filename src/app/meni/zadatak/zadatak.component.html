@@ -11,8 +11,16 @@
             <input formControlName="opisZadatka" matInput placeholder="Opis Zadatka">
           </mat-form-field>
           <mat-form-field>
-              <input formControlName="zadatakKreiran" matInput placeholder="Datum i Vrijeme">
+            <input
+            formControlName="zadatakKreiran"
+            matInput
+            [matDatepicker]="picker"
+            (ngModelChange)="onDataChange($event)"
+            placeholder="Datum">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+               <input type="hidden" formControlName="vrijeme">
         </div>
       </mat-grid-tile>
   </mat-grid-list>

@@ -6,11 +6,26 @@ import { ZadaciService } from '../../servis/zadaci.service';
   templateUrl: './zadatak.component.html',
   styleUrls: ['./zadatak.component.scss']
 })
+
+
+
 export class ZadatakComponent implements OnInit {
+  vrijemeUnosa: string;
 
   constructor(public zadatakServis: ZadaciService) { }
+  date: Date;
 
   ngOnInit() {
+  }
+
+
+  onDataChange(newdate) {
+    let date = new Date;
+    let sati = date.getHours();
+    let minute = date.getMinutes();
+    let sekunde = date.getSeconds();
+    this.vrijemeUnosa = sati + 'h-' + minute + 'min-' + sekunde + 'sec';
+    console.log(this.vrijemeUnosa);
   }
 
 }

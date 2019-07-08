@@ -11,6 +11,7 @@ export class ZadaciService {
     $id: new FormControl(null),
     imeZadatka: new FormControl (''),
     opisZadatka: new FormControl (''),
-    zadatakKreiran: new FormControl ('')
+    zadatakKreiran: new FormControl (''),
+    vrijeme: new FormControl(null),
   });
 }
