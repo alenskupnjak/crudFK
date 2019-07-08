@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ZadaciService } from '../../servis/zadaci.service';
+import { ObavijestiService } from '../../servis/obavijesti.service';
 
 @Component({
   selector: 'app-zadatak',
@@ -12,15 +13,18 @@ import { ZadaciService } from '../../servis/zadaci.service';
 export class ZadatakComponent implements OnInit {
   vrijemeUnosa: string;
 
-  constructor(public zadatakServis: ZadaciService) { }
+  constructor(
+    public zadatakServis: ZadaciService,
+    public obavijest: ObavijestiService
+    ) { }
+
+
+
   date: Date;
 
   ngOnInit() {
     this.zadatakServis.dohvatiSveZadatke();
   }
-
-
-
 
 
 
@@ -46,6 +50,7 @@ export class ZadatakComponent implements OnInit {
       this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
       this.zadatakServis.polja.reset();
       this.zadatakServis.inicijaliziraj();
+      this.obavijest.uspjesno('Zadatak snimljen!');
     }
 
   }
