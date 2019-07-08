@@ -14,6 +14,8 @@ export class ListaZadatakaComponent implements OnInit {
   listaZadataka: MatTableDataSource<any>;
   ispisaneKolone: string[] = ['imeZadatka', 'opisZadatka', 'zadatakKreiran', 'vrijeme', 'akcija'];
 
+  ucitano = true;
+
   ngOnInit() {
     this.servis.dohvatiSveZadatke().subscribe(
       data => {
@@ -25,7 +27,7 @@ export class ListaZadatakaComponent implements OnInit {
         });
         this.listaZadataka = new MatTableDataSource(podaci);
         console.log(this.listaZadataka);
-
+        this.ucitano = false;
       });
   }
 

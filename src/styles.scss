@@ -8,9 +8,12 @@ div.container {
  margin: 0px 30px;
 }
 
+.hide{
+  display: none;
+}
 
 form.formaZadatak {
-  margin: 0px 20px;
+  margin: 10px;
 }
 
 .zadatakForma {
@@ -24,6 +27,21 @@ form.formaZadatak {
 
 .button-zadatak button{
     margin: 10px;
+}
+
+.ucitavanje{
+  // background-color: #5cb85c;
+  // position: absolute;
+  height: 100px;
+  // height: 10px;
+  justify-content: center;
+  // align-content: center;
+  // font-style: italic;
+}
+
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
 }
 
 

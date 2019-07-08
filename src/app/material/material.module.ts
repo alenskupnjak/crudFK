@@ -15,7 +15,8 @@ import * as Material from '@angular/material';
     Material.MatButtonModule,
     Material.MatSnackBarModule,
     Material.MatTableModule,
-    Material.MatIconModule
+    Material.MatIconModule,
+    Material.MatProgressSpinnerModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -27,7 +28,8 @@ import * as Material from '@angular/material';
     Material.MatButtonModule,
     Material.MatSnackBarModule,
     Material.MatTableModule,
-    Material.MatIconModule
+    Material.MatIconModule,
+    Material.MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }
