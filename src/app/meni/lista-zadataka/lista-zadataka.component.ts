@@ -39,6 +39,11 @@ export class ListaZadatakaComponent implements OnInit {
 
   ocistiFilter() {
     this.nadiZapis = '';
+    this.filtriraj();
+  }
+
+  filtriraj() {
+    this.listaZadataka.filter = this.nadiZapis.trim().toLowerCase();
   }
 
 }

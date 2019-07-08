@@ -4,7 +4,7 @@
   </button>
 
    <mat-form-field class="filter-polje" floatLabel='never'>
-     <input matInput [(ngModel)]='nadiZapis' placeholder="Traži" (keyup)='filtriraj'>
+     <input matInput [(ngModel)]='nadiZapis' placeholder="Traži" (keyup)='filtriraj()'>
       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf='nadiZapis' (click)='ocistiFilter()'>
        <mat-icon>close</mat-icon>
       </button>
