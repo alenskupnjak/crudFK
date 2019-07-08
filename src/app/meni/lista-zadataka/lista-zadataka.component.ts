@@ -16,6 +16,7 @@ export class ListaZadatakaComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  nadiZapis: string;
   ucitano = true;
   brojZadataka = false;
 
@@ -34,6 +35,10 @@ export class ListaZadatakaComponent implements OnInit {
         this.listaZadataka.paginator = this.paginator;
         this.ucitano = false;
       });
+  }
+
+  ocistiFilter() {
+    this.nadiZapis = '';
   }
 
 }

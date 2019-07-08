@@ -1,5 +1,17 @@
-<div class="mat-elevation-z8">
+<div class="filter">
+  <button mat-rised-button>
+    <mat-icon>add</mat-icon>
+  </button>
 
+   <mat-form-field class="filter-polje" floatLabel='never'>
+     <input matInput [(ngModel)]='nadiZapis' placeholder="Traži" (keyup)='filtriraj'>
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf='nadiZapis' (click)='ocistiFilter()'>
+       <mat-icon>close</mat-icon>
+      </button>
+   </mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
   <mat-table [dataSource]="listaZadataka" matSort>
     <ng-container matColumnDef="imeZadatka">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Ime zadatka</mat-header-cell>
