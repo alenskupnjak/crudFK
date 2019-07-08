@@ -20,7 +20,13 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-               <input type="hidden" formControlName="vrijeme">
+               <div>
+                 <input formControlName="vrijeme" [(ngModel)]="vrijemeUnosa" placeholder="Vrijeme">
+               </div>
+               <div class="button-zadatak">
+                 <button mat-raised-button color="primary">Unesi vrijednost</button>
+                 <button mat-raised-button color="warn">Obriši vrijednosti</button>
+               </div>
         </div>
       </mat-grid-tile>
   </mat-grid-list>

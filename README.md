@@ -39,3 +39,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 005- definirana forma za datum i vrijeme
    Ne piše u uputama no MatDatepickerModule i MatNativeDateModule moraju ici zajedno
+
+006- definirani button unos i obriši

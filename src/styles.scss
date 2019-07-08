@@ -6,7 +6,6 @@
 
 div.container {
  margin: 0px 30px;
-
 }
 
 
@@ -21,7 +20,11 @@ form.formaZadatak {
 
 .zadatakForma > * {
   width: 100%;
-  }
+}
+
+.button-zadatak button{
+    margin: 10px;
+}
 
 
 

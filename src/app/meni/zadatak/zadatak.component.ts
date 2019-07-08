@@ -25,7 +25,6 @@ export class ZadatakComponent implements OnInit {
     let minute = date.getMinutes();
     let sekunde = date.getSeconds();
     this.vrijemeUnosa = sati + 'h-' + minute + 'min-' + sekunde + 'sec';
-    console.log(this.vrijemeUnosa);
   }
 
 }
