@@ -44,4 +44,13 @@
        [ngClass]="{'hide':listaZadataka!=null}">
     </mat-footer-row>
   </mat-table>
+
+  <!-- <mat-paginator *ngIf="brojZadataka>5" -->
+  <mat-paginator
+  [pageSizeOptions]="[5,10,20]"
+  [pageSize]="5"
+  showFirstLastButtons
+  [ngStyle]="{display: brojZadataka ? 'block' : 'none'}"
+  >
+  </mat-paginator>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ZadaciService } from 'src/app/servis/zadaci.service';
-import { MatTableDataSource, MatSort } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-lista-zadataka',
@@ -14,8 +14,10 @@ export class ListaZadatakaComponent implements OnInit {
   listaZadataka: MatTableDataSource<any>;
   ispisaneKolone: string[] = ['imeZadatka', 'opisZadatka', 'zadatakKreiran', 'vrijeme', 'akcija'];
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ucitano = true;
+  brojZadataka = false;
 
   ngOnInit() {
     this.servis.dohvatiSveZadatke().subscribe(
@@ -26,8 +28,10 @@ export class ListaZadatakaComponent implements OnInit {
             ...podatak.payload.val()
           };
         });
+        if ( podaci.length > 5) { this.brojZadataka = true; }
         this.listaZadataka = new MatTableDataSource(podaci);
         this.listaZadataka.sort = this.sort;
+        this.listaZadataka.paginator = this.paginator;
         this.ucitano = false;
       });
   }

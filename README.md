@@ -63,3 +63,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 016- ubacen spinner
 
 017- ugradeno sortiranje
+
+018- ubacena paginacija
+
+
