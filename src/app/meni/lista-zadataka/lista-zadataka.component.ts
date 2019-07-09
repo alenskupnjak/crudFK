@@ -3,6 +3,7 @@ import { ZadaciService } from 'src/app/servis/zadaci.service';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ZadatakComponent } from '../zadatak/zadatak.component';
+import { ObavijestiService } from 'src/app/servis/obavijesti.service';
 
 @Component({
   selector: 'app-lista-zadataka',
@@ -13,7 +14,8 @@ export class ListaZadatakaComponent implements OnInit {
 
   constructor(
     private servis: ZadaciService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public obavijest: ObavijestiService
     ) { }
 
   listaZadataka: MatTableDataSource<any>;
@@ -24,6 +26,7 @@ export class ListaZadatakaComponent implements OnInit {
   nadiZapis: string;
   ucitano = true;
   brojZadataka = false;
+  listOznacenih = [];
 
   ngOnInit() {
     this.servis.dohvatiSveZadatke().subscribe(
@@ -72,8 +75,41 @@ export class ListaZadatakaComponent implements OnInit {
   obrisi(id, event) {
    this.servis.obrisiZadatak(id);
     this.brojZadataka = false;
-    if ( event.data.length > 6) { this.brojZadataka = true; }
-    
+    if ( event.data.length > 5) { this.brojZadataka = true; }
+
+  }
+
+  obrisiViseZadataka() {
+    if (this.listOznacenih.length == 0) { return; }
+    if (confirm(`Are you sure you want to delete ${ this.listOznacenih.length } records?`)) {
+      this.listOznacenih.forEach(data => {
+        this.servis.obrisiViseZadataka(data);
+       });
+       this.obavijest.upozorenje(`${this.listOznacenih.length} zadatka obrisano!`);
+    }
+    this.brojZadataka = false;
+    if ( (this.listaZadataka.data.length - this.listOznacenih.length) > 5) { this.brojZadataka = true; }
+    this.listOznacenih = [];
+  }
+
+
+
+  sastaviListuOznacenih(id) {
+    let nasoZadatak = -1;
+    if (this.listOznacenih.length == 0) {
+          this.listOznacenih.push(id);
+          return
+   }
+
+    this.listOznacenih.forEach((data, index) => {
+         if (data == id) {
+           nasoZadatak = index;
+           this.listOznacenih.splice(index, 1);
+        }
+    });
+
+    if (nasoZadatak === -1) { this.listOznacenih.push(id); }
+    console.log(this.listOznacenih);
   }
 
 }

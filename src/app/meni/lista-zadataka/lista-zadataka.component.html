@@ -9,6 +9,9 @@
        <mat-icon>close</mat-icon>
       </button>
    </mat-form-field>
+   <button mat-raised-button (click)="obrisiViseZadataka()">
+    <mat-icon>delete_forever</mat-icon>Obriši označene
+  </button>
 </div>
 
 <div class="mat-elevation-z8">
@@ -35,6 +38,8 @@
       <mat-cell *matCellDef="let row">
         <button mat-icon-button color="primary" (click)="editirajZadatak(row)"><mat-icon>edit</mat-icon></button>
         <button mat-icon-button color="warn" (click)='obrisi(row.$id, listaZadataka)'><mat-icon>delete_forever</mat-icon></button>
+        <mat-checkbox (click)="sastaviListuOznacenih(row.$id)"></mat-checkbox>
+
       </mat-cell>
     </ng-container>
 

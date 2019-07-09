@@ -69,5 +69,10 @@ export class ZadaciService {
     }
   }
 
+  obrisiViseZadataka( $id: string) {
+      this.listaZadataka.remove($id);
+      this.obavijest.upozorenje('Zadatak Obrisan!');
+  }
+
 
 }

@@ -19,7 +19,8 @@ import * as Material from '@angular/material';
     Material.MatProgressSpinnerModule,
     Material.MatSortModule,
     Material.MatPaginatorModule,
-    Material.MatDialogModule
+    Material.MatDialogModule,
+    Material.MatCheckboxModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -35,7 +36,8 @@ import * as Material from '@angular/material';
     Material.MatProgressSpinnerModule,
     Material.MatSortModule,
     Material.MatPaginatorModule,
-    Material.MatDialogModule
+    Material.MatDialogModule,
+    Material.MatCheckboxModule
   ]
 })
 export class MaterialModule { }
