@@ -46,6 +46,19 @@ export class ZadaciService {
       vrijeme: zadatak.vrijeme
     });
   }
+  popuniFormu(zadatak) {
+    this.polja.setValue(zadatak);
+  }
+
+  updateZadatak(zadatak) {
+    this.listaZadataka.update(zadatak.$id,
+      {
+        imeZadatka: zadatak.imeZadatka,
+        opisZadatka: zadatak.opisZadatka,
+        zadatakKreiran: zadatak.zadatakKreiran,
+        vrijeme: zadatak.vrijeme
+      });
+  }
 
 
 }

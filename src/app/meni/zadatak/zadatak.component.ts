@@ -46,11 +46,15 @@ export class ZadatakComponent implements OnInit {
 
   snimi() {
     if (this.zadatakServis.polja.valid) {
-      this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
-      this.zadatakServis.polja.reset();
-      this.zadatakServis.inicijaliziraj();
-      this.obavijest.uspjesno('Zadatak snimljen u bazu!');
-      this.zatvoriFormu();
+      if (!this.zadatakServis.polja.get('$id').value) {
+        this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
+      } else {
+              this.zadatakServis.updateZadatak(this.zadatakServis.polja.value);
+              this.zadatakServis.polja.reset();
+              this.zadatakServis.inicijaliziraj();
+              this.obavijest.uspjesno('Zadatak snimljen u bazu!');
+              this.zatvoriFormu();
+      }
     }
   }
 

@@ -60,4 +60,13 @@ export class ListaZadatakaComponent implements OnInit {
     this.dialog.open(ZadatakComponent, dialogConfig);
   }
 
+  editirajZadatak(row) {
+    this.servis.popuniFormu(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    this.dialog.open(ZadatakComponent, dialogConfig);
+  }
+
 }

@@ -72,6 +72,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 021- Otvaranje forme unosa zadatka
 
+022- impl update
+
 
 
 
