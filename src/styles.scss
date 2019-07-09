@@ -8,6 +8,10 @@ div.container {
  margin: 0px 30px;
 }
 
+.popuni-preostali-prostor {
+  flex: 1 1 auto;
+}
+
 .hide{
   display: none;
 }
@@ -52,6 +56,14 @@ mat-footer-row mat-footer-cell{
   margin-left: 10px;
   padding: 5px 10px;
 }
+
+.btn-dialog-close{
+  width: 35px;
+  height: 35px;
+  color: brown;
+}
+
+
 
 
 
