@@ -15,12 +15,12 @@
           <input type="hidden" formControlName="$id">
 
           <mat-form-field>
-            <input formControlName="imeZadatka" matInput placeholder="Naziv zadatka">
+            <input formControlName="imeZadatka" matInput placeholder="Naziv">
             <mat-error>Obavezno polje</mat-error>
           </mat-form-field>
 
           <mat-form-field>
-            <input formControlName="opisZadatka" matInput placeholder="Opis zadatka">
+            <input formControlName="opisZadatka" matInput placeholder="Opis">
             <mat-error *ngIf="zadatakServis.polja.controls['opisZadatka'].errors?.required">Obavezno polje</mat-error>
             <mat-error *ngIf="zadatakServis.polja.controls['opisZadatka'].errors?.minlength">Minimalno 10 znakova</mat-error>
           </mat-form-field>
@@ -31,7 +31,7 @@
             matInput
             [matDatepicker]="picker"
             (ngModelChange)="onDataChange($event)"
-            placeholder="Datum unosa">
+            placeholder="Datum">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>

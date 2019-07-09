@@ -52,7 +52,7 @@ mat-footer-row mat-footer-cell{
 }
 
 .filter-polje{
-  width: 50%;
+  width: 70%;
   margin-left: 10px;
   padding: 5px 10px;
 }
@@ -71,6 +71,10 @@ snack-bar-container.uspjesno {
 snack-bar-container.upozorenje {
   background-color:orangered;
   color : #fff;
+}
+
+.mat-raised-button {
+  background-color:#d9f0b5;
 }
 
 

@@ -17,19 +17,19 @@
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listaZadataka" matSort>
     <ng-container matColumnDef="imeZadatka">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Ime zadatka</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Ime</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.imeZadatka}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="opisZadatka">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Opis zadatka</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Opis</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.opisZadatka}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="zadatakKreiran">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Datum kreiranja</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Datum</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.zadatakKreiran}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="vrijeme">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Vrijeme kreiranja</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Vrijeme</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.vrijeme}}</mat-cell>
     </ng-container>
 
