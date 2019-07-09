@@ -70,6 +70,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 020- filtriranje gotovo
 
+021- Otvaranje forme unosa zadatka
 
 
 

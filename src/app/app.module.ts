@@ -38,6 +38,7 @@ import { ListaZadatakaComponent } from './meni/lista-zadataka/lista-zadataka.com
     FormsModule
   ],
   providers: [ZadaciService, DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ZadatakComponent]
 })
 export class AppModule { }

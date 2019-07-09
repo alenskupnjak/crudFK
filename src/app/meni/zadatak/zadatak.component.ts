@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 import { ZadaciService } from '../../servis/zadaci.service';
 import { ObavijestiService } from '../../servis/obavijesti.service';
@@ -15,7 +16,8 @@ export class ZadatakComponent implements OnInit {
 
   constructor(
     public zadatakServis: ZadaciService,
-    public obavijest: ObavijestiService
+    public obavijest: ObavijestiService,
+    public dialogRef: MatDialogRef<ZadatakComponent>
     ) { }
 
 
@@ -43,14 +45,19 @@ export class ZadatakComponent implements OnInit {
   }
 
   snimi() {
-    console.log(this.zadatakServis.polja.value);
-
     if (this.zadatakServis.polja.valid) {
       this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
       this.zadatakServis.polja.reset();
       this.zadatakServis.inicijaliziraj();
       this.obavijest.uspjesno('Zadatak snimljen u bazu!');
+      this.zatvoriFormu();
     }
+  }
+
+  zatvoriFormu() {
+    this.zadatakServis.polja.reset();
+    this.zadatakServis.inicijaliziraj();
+    this.dialogRef.close();
   }
 
 }

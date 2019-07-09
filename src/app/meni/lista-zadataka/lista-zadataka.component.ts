@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ZadaciService } from 'src/app/servis/zadaci.service';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ZadatakComponent } from '../zadatak/zadatak.component';
 
 @Component({
   selector: 'app-lista-zadataka',
@@ -9,7 +11,10 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 })
 export class ListaZadatakaComponent implements OnInit {
 
-  constructor(private servis: ZadaciService) { }
+  constructor(
+    private servis: ZadaciService,
+    private dialog: MatDialog
+    ) { }
 
   listaZadataka: MatTableDataSource<any>;
   ispisaneKolone: string[] = ['imeZadatka', 'opisZadatka', 'zadatakKreiran', 'vrijeme', 'akcija'];
@@ -44,6 +49,15 @@ export class ListaZadatakaComponent implements OnInit {
 
   filtriraj() {
     this.listaZadataka.filter = this.nadiZapis.trim().toLowerCase();
+  }
+
+  kreirajNoviZadatak() {
+    this.servis.inicijaliziraj();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    this.dialog.open(ZadatakComponent, dialogConfig);
   }
 
 }
