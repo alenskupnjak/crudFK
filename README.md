@@ -82,6 +82,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 026- dodano brisanje više zadataka
 
+027- ispitivanje, uredivanje
+
 
 
 

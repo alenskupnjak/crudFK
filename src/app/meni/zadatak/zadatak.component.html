@@ -15,12 +15,12 @@
           <input type="hidden" formControlName="$id">
 
           <mat-form-field>
-            <input formControlName="imeZadatka" matInput placeholder="Naziv Zadatka">
+            <input formControlName="imeZadatka" matInput placeholder="Naziv zadatka">
             <mat-error>Obavezno polje</mat-error>
           </mat-form-field>
 
           <mat-form-field>
-            <input formControlName="opisZadatka" matInput placeholder="Opis Zadatka">
+            <input formControlName="opisZadatka" matInput placeholder="Opis zadatka">
             <mat-error *ngIf="zadatakServis.polja.controls['opisZadatka'].errors?.required">Obavezno polje</mat-error>
             <mat-error *ngIf="zadatakServis.polja.controls['opisZadatka'].errors?.minlength">Minimalno 10 znakova</mat-error>
           </mat-form-field>
@@ -31,17 +31,19 @@
             matInput
             [matDatepicker]="picker"
             (ngModelChange)="onDataChange($event)"
-            placeholder="Datum">
+            placeholder="Datum unosa">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
-               <div>
-                 <input formControlName="vrijeme" placeholder="Vrijeme">
-               </div>
+
+            <mat-form-field>
+                <input formControlName="vrijeme" matInput placeholder="Vrijeme">
+              <mat-error>Obavezno polje</mat-error>
+            </mat-form-field>
 
                <div class="button-zadatak">
-                 <button mat-raised-button color="primary" type="submit" [disabled]="zadatakServis.polja.invalid">Snimi vrijednost</button>
+                 <button mat-raised-button color="primary" type="submit" [disabled]="zadatakServis.polja.invalid">Snimi zadatak</button>
                  <button mat-raised-button color="warn" (click)="ocistiPolja()">Obriši polja</button>
                </div>
 

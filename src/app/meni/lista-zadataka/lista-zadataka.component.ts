@@ -75,7 +75,7 @@ export class ListaZadatakaComponent implements OnInit {
   obrisi(id, event) {
    this.servis.obrisiZadatak(id);
     this.brojZadataka = false;
-    if ( event.data.length > 5) { this.brojZadataka = true; }
+    if ( (event.data.length-1) > 5) { this.brojZadataka = true; }
 
   }
 
@@ -85,10 +85,12 @@ export class ListaZadatakaComponent implements OnInit {
       this.listOznacenih.forEach(data => {
         this.servis.obrisiViseZadataka(data);
        });
-       this.obavijest.upozorenje(`${this.listOznacenih.length} zadatka obrisano!`);
+       this.obavijest.upozorenje(`${this.listOznacenih.length} zadatka - obrisano!`);
     }
     this.brojZadataka = false;
-    if ( (this.listaZadataka.data.length - this.listOznacenih.length) > 5) { this.brojZadataka = true; }
+    console.log(this.listaZadataka.data.length - this.listOznacenih.length);
+
+    if ((this.listaZadataka.data.length - this.listOznacenih.length) > 5) { this.brojZadataka = true; }
     this.listOznacenih = [];
   }
 
@@ -109,7 +111,6 @@ export class ListaZadatakaComponent implements OnInit {
     });
 
     if (nasoZadatak === -1) { this.listOznacenih.push(id); }
-    console.log(this.listOznacenih);
   }
 
 }
