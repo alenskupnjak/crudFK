@@ -48,6 +48,7 @@ export class ZadatakComponent implements OnInit {
     if (this.zadatakServis.polja.valid) {
       if (!this.zadatakServis.polja.get('$id').value) {
         this.zadatakServis.snimiZadatak(this.zadatakServis.polja.value);
+        this.obavijest.uspjesno('Zadatak snimljen u bazu!');
       } else {
               this.zadatakServis.updateZadatak(this.zadatakServis.polja.value);
               this.zadatakServis.polja.reset();

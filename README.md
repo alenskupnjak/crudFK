@@ -78,6 +78,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 024- delete zadatak
 
+025- uredena obavijesti
+
 
 
 

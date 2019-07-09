@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import { DatePipe } from '@angular/common';
+import { ObavijestiService } from './obavijesti.service';
 
 @Injectable({providedIn: 'root'})
 
@@ -9,7 +10,8 @@ export class ZadaciService {
 
   constructor(
     private firebase: AngularFireDatabase,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    public obavijest: ObavijestiService
                  ) { }
 
   listaZadataka: AngularFireList<any>;
@@ -55,13 +57,16 @@ export class ZadaciService {
       {
         imeZadatka: zadatak.imeZadatka,
         opisZadatka: zadatak.opisZadatka,
-        zadatakKreiran: zadatak.zadatakKreiran,
+        zadatakKreiran: zadatak.zadatakKreiran == '' ? '' : this.datePipe.transform(zadatak.zadatakKreiran, 'yyyy-MM-dd'),
         vrijeme: zadatak.vrijeme
       });
   }
 
   obrisiZadatak( $id: string) {
-    this.listaZadataka.remove($id);
+    if (confirm('Are you sure you want to delete this record?')) {
+      this.listaZadataka.remove($id);
+      this.obavijest.upozorenje('Zadatak Obrisan!');
+    }
   }
 
 

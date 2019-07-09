@@ -73,6 +73,7 @@ export class ListaZadatakaComponent implements OnInit {
    this.servis.obrisiZadatak(id);
     this.brojZadataka = false;
     if ( event.data.length > 6) { this.brojZadataka = true; }
+    
   }
 
 }
