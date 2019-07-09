@@ -60,5 +60,9 @@ export class ZadaciService {
       });
   }
 
+  obrisiZadatak( $id: string) {
+    this.listaZadataka.remove($id);
+  }
+
 
 }

@@ -34,7 +34,7 @@ export class ListaZadatakaComponent implements OnInit {
             ...podatak.payload.val()
           };
         });
-        if ( podaci.length > 5) { this.brojZadataka = true; }
+        if ( podaci.length > 6) { this.brojZadataka = true; }
         this.listaZadataka = new MatTableDataSource(podaci);
         this.listaZadataka.sort = this.sort;
         this.listaZadataka.paginator = this.paginator;
@@ -67,6 +67,12 @@ export class ListaZadatakaComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
     this.dialog.open(ZadatakComponent, dialogConfig);
+  }
+
+  obrisi(id, event) {
+   this.servis.obrisiZadatak(id);
+    this.brojZadataka = false;
+    if ( event.data.length > 6) { this.brojZadataka = true; }
   }
 
 }
