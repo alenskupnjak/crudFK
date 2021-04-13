@@ -2,8 +2,7 @@
   "name": "crud-fk",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve -o",
+    "start5002": "ng serve --port 5002 -o",
     "build": "ng build -o",
     "test": "ng test",
     "lint": "ng lint",

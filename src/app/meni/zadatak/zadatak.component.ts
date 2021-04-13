@@ -21,14 +21,11 @@ export class ZadatakComponent implements OnInit {
     ) { }
 
 
-
   date: Date;
 
   ngOnInit() {
     this.zadatakServis.dohvatiSveZadatke();
   }
-
-
 
   onDataChange(newdate) {
     let date = new Date;

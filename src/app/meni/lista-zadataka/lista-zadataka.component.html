@@ -3,13 +3,13 @@
     <mat-icon>add</mat-icon>Novi zadatak
   </button>
 
-   <mat-form-field class="filter-polje" floatLabel='never'>
-     <input matInput [(ngModel)]='nadiZapis' placeholder="Traži" (keyup)='filtriraj()'>
-      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf='nadiZapis' (click)='ocistiFilter()'>
-       <mat-icon>close</mat-icon>
-      </button>
-   </mat-form-field>
-   <button mat-raised-button (click)="obrisiViseZadataka()">
+  <mat-form-field class="filter-polje" floatLabel='never'>
+    <input matInput [(ngModel)]='nadiZapis' placeholder="Traži" (keyup)='filtriraj()'>
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf='nadiZapis' (click)='ocistiFilter()'>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button (click)="obrisiViseZadataka()">
     <mat-icon>delete_forever</mat-icon>Obriši označene
   </button>
 </div>
@@ -36,37 +36,35 @@
     <ng-container matColumnDef="akcija">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button color="primary" (click)="editirajZadatak(row)"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button color="warn" (click)='obrisi(row.$id, listaZadataka)'><mat-icon>delete_forever</mat-icon></button>
+        <button mat-icon-button color="primary" (click)="editirajZadatak(row)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)='obrisi(row.$id, listaZadataka)'>
+          <mat-icon>delete_forever</mat-icon>
+        </button>
         <mat-checkbox (click)="sastaviListuOznacenih(row.$id)"></mat-checkbox>
 
       </mat-cell>
     </ng-container>
 
 
-      <ng-container matColumnDef="loading">
-          <mat-footer-cell *matFooterCellDef colspan="6">
-              <mat-spinner *ngIf="ucitano"></mat-spinner>
-            Usnimavanje podataka..
-          </mat-footer-cell>
-        </ng-container>
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        <mat-spinner *ngIf="ucitano"></mat-spinner>
+        Usnimavanje podataka..
+      </mat-footer-cell>
+    </ng-container>
 
     <!-- ključni zapis za mat- datatablu , postavlja header za tablicu -->
     <mat-header-row *matHeaderRowDef="ispisaneKolone"></mat-header-row>
     <mat-row *matRowDef="let row, columns: ispisaneKolone;"></mat-row>
 
-    <mat-footer-row
-      *matFooterRowDef="['loading']"
-       [ngClass]="{'hide':listaZadataka!=null}">
+    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listaZadataka!=null}">
     </mat-footer-row>
   </mat-table>
 
   <!-- <mat-paginator *ngIf="brojZadataka>5" -->
-  <mat-paginator
-  [pageSizeOptions]="[5,10,20]"
-  [pageSize]="5"
-  showFirstLastButtons
-  [ngStyle]="{display: brojZadataka ? 'block' : 'none'}"
-  >
+  <mat-paginator [pageSizeOptions]="[5,10,20]" [pageSize]="5" showFirstLastButtons
+    [ngStyle]="{display: brojZadataka ? 'block' : 'none'}">
   </mat-paginator>
 </div>
